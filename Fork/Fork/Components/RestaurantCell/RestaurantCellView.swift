@@ -7,11 +7,7 @@ struct RestaurantCellView: View {
                 RestaurantView()
             } label: {
                 VStack(alignment: .leading) {
-                    Image("restaurant")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 180)
-                        .clipped()
+                    ImageView(image: "restaurant", height: 180)
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Siwy Dym")

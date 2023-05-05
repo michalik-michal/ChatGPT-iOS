@@ -21,6 +21,10 @@ struct RestaurantsListView: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
+                .overlay {
+                    Text("FORK")
+                        .font(.title.bold())
+                }
                 SearchFieldView(searchText: $searchText)
                     .padding(.horizontal, 5)
                 ScrollView {
