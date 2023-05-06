@@ -9,6 +9,8 @@ struct RestaurantView: View {
                 adressStack
                 secondaryStack
                 buttonStack
+                FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast])
+                    .padding(.top)
                 Spacer()
             }
             .padding(.horizontal)

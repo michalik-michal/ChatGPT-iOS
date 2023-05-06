@@ -14,6 +14,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             map
+                .zIndex(-10)
             VStack {
                 Spacer()
                 listButton
@@ -29,7 +30,8 @@ struct HomeView: View {
             annotationItems: viewModel.places)
         { place in
             MapAnnotation(coordinate: place.location) {
-                MarkerView(icon: place.icon, color: place.color)
+                MarkerView(icon: place.icon, color: place.color, rating: place.rating)
+                    .zIndex(10)
             }
         }
         .ignoresSafeArea()
