@@ -1,20 +1,47 @@
 import SwiftUI
 
 struct RestaurantView: View {
+    
+    @State private var selectedCategory: MealCategory = .all
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            ImageView(image: "restaurant", height: 180)
-            VStack {
-                titleStack
-                adressStack
-                secondaryStack
-                buttonStack
-                FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast])
-                    .padding(.top)
-                Spacer()
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading) {
+                ImageView(image: "restaurant", height: 180)
+                VStack {
+                    VStack {
+                        titleStack
+                        adressStack
+                        secondaryStack
+                        buttonStack
+                        FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast], mealCategory: $selectedCategory)
+                            .padding(.top)
+                    }
+                    .padding(.horizontal)
+                    menuPageView
+                    Spacer()
+                }
             }
-            .padding(.horizontal)
         }
+    }
+    
+    private var menuPageView: some View {
+        TabView(selection: $selectedCategory) {
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.all)
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.main)
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.pizza)
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.pasta)
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.drinks)
+            MenuScrollView(menu: Mock().mockFoodModel())
+                .tag(MealCategory.breakfast)
+        }
+        .frame(height: 650)
+        .tabViewStyle(.page(indexDisplayMode: .never))
     }
     
     private var titleStack: some View {
