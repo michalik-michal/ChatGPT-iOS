@@ -3,6 +3,7 @@ import SwiftUI
 struct RestaurantView: View {
     
     @State private var selectedCategory: MealCategory = .all
+    @Namespace var animation
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -14,12 +15,57 @@ struct RestaurantView: View {
                         adressStack
                         secondaryStack
                         buttonStack
-                        FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast], mealCategory: $selectedCategory)
+//                        FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast], mealCategory: $selectedCategory)
+//                            .padding(.top)
+                        foodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast])
                             .padding(.top)
                     }
                     .padding(.horizontal)
                     menuPageView
                     Spacer()
+                }
+            }
+        }
+    }
+    
+    private func foodCategoryStack(categories: [MealCategory]) -> some View {
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(categories, id: \.self) { category in
+                        VStack {
+                            Text(category.rawValue)
+                                .font(.subheadline)
+                                .fontWeight(selectedCategory == category ? .bold : .regular)
+                                .frame(width: 80)
+                                .id(category.rawValue)
+                            if selectedCategory == category {
+                                Capsule()
+                                    .foregroundColor(.black)
+                                    .frame(height: 2)
+                                    .matchedGeometryEffect(id: "filter", in: animation)
+                            } else {
+                                Capsule()
+                                    .foregroundColor(.clear)
+                                    .frame(height: 2)
+                            }
+                        }
+                        .onTapGesture {
+                            withAnimation {
+                                self.selectedCategory = category
+                                proxy.scrollTo(selectedCategory, anchor: .center)
+                            }
+                        }
+                    }
+                }
+                .onChange(of: selectedCategory) { category in
+                    withAnimation {
+                        proxy.scrollTo(category, anchor: .center)
+                    }
+                }
+                .overlay {
+                    Divider()
+                        .offset(y: 15)
                 }
             }
         }
