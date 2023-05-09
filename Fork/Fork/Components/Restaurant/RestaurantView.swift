@@ -106,8 +106,15 @@ struct RestaurantView: View {
                     .bold()
                 Text("(149)")
                     .foregroundColor(.gray)
+                Image("google")
+                    .resizable()
+                    .frame(width: 30, height: 30)
             }
             .padding(.top, 3)
+            .onTapGesture {
+                let link = "https://goo.gl/maps/bJMtrxCDRBzPYjPH7"
+                UIApplication.shared.open(URL(string: link)!, options: [:], completionHandler: nil)
+            }
         }
     }
     
@@ -116,8 +123,6 @@ struct RestaurantView: View {
             Text("Ul. Pod Wawelem 3b")
                 .foregroundColor(.gray)
             Spacer()
-            Text("From Google")
-                .foregroundColor(.gray)
         }
     }
     
@@ -141,15 +146,24 @@ struct RestaurantView: View {
                     .frame(width: 20, height: 20)
                 Text("Navigate")
             }
+            .onTapGesture {
+                navigateOnGoogleMap(sourceLatitude: 50.0683951,
+                                    sourceLongitude: 19.8638987,
+                                    destinationLatitude: 50.0657996,
+                                    destinationLongitude: 19.8751487)
+            }
             .padding()
             .frame(maxWidth: .infinity)
             .overlay(
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(.black, lineWidth: 1))
-            HStack {
-                Image(systemName: "iphone")
-                Text("Call")
-            }
+            Link(destination: URL(string: "tel:604171647")!, label: {
+                HStack {
+                    Image(systemName: "iphone")
+                    Text("Call")
+                }
+            })
+            .foregroundColor(.black)
             .padding()
             .frame(maxWidth: .infinity)
             .overlay(
@@ -157,6 +171,19 @@ struct RestaurantView: View {
                         .stroke(.black, lineWidth: 1))
         }
     }
+    
+    private func navigateOnGoogleMap(sourceLatitude : Double, sourceLongitude : Double, destinationLatitude : Double, destinationLongitude : Double) {
+            let urlGoogleMap : URL = URL(string: "comgooglemaps://?saddr=\(sourceLatitude),\(sourceLongitude)&daddr=\(destinationLatitude),\(destinationLongitude)&directionsmode=driving")!
+            
+            if UIApplication.shared.canOpenURL(urlGoogleMap) {
+                UIApplication.shared.open(urlGoogleMap, options: [:], completionHandler: nil)
+                
+            } else {
+                let urlString = URL(string:"http://maps.google.com/?saddr=\(sourceLatitude),\(sourceLongitude)&daddr=\(destinationLatitude),\(destinationLongitude)&directionsmode=driving")
+                
+                UIApplication.shared.open(urlString!, options: [:], completionHandler: nil)
+            }
+        }
 }
 
 struct RestaurantView_Previews: PreviewProvider {

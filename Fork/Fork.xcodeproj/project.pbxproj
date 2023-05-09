@@ -30,6 +30,7 @@
 		6B4E95A42A0681EF002474E5 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E95A32A0681EF002474E5 /* FoodModel.swift */; };
 		6B4E95A62A079202002474E5 /* MenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E95A52A079202002474E5 /* MenuScrollView.swift */; };
 		6B4E95A92A0794B1002474E5 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E95A82A0794B1002474E5 /* Mock.swift */; };
+		6B4E95AC2A07A381002474E5 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E95AB2A07A381002474E5 /* RestaurantModel.swift */; };
 		6BF0BA142A057F80003763A6 /* FoodCategoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0BA132A057F80003763A6 /* FoodCategoryStack.swift */; };
 		6BF0BA162A05810E003763A6 /* MealCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0BA152A05810E003763A6 /* MealCategory.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		6B4E95A32A0681EF002474E5 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
 		6B4E95A52A079202002474E5 /* MenuScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScrollView.swift; sourceTree = "<group>"; };
 		6B4E95A82A0794B1002474E5 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		6B4E95AB2A07A381002474E5 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		6BF0BA132A057F80003763A6 /* FoodCategoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryStack.swift; sourceTree = "<group>"; };
 		6BF0BA152A05810E003763A6 /* MealCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,8 @@
 		6B0F45902A014A87009E026A /* Fork */ = {
 			isa = PBXGroup;
 			children = (
+				6B4E95A72A0794AA002474E5 /* Mock */,
+				6B4E95AA2A07A373002474E5 /* Models */,
 				6B0F45BF2A015046009E026A /* Components */,
 				6B0F45912A014A87009E026A /* ForkApp.swift */,
 				6B0F45932A014A87009E026A /* ContentView.swift */,
@@ -169,7 +173,6 @@
 		6B0F45BF2A015046009E026A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6B4E95A72A0794AA002474E5 /* Mock */,
 				6BF0BA122A057F75003763A6 /* FoodCategoryStack */,
 				6B0F45D42A027E5B009E026A /* Map */,
 				6B0F45D12A0231B4009E026A /* Image */,
@@ -258,6 +261,14 @@
 				6B4E95A82A0794B1002474E5 /* Mock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		6B4E95AA2A07A373002474E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B4E95AB2A07A381002474E5 /* RestaurantModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6BF0BA122A057F75003763A6 /* FoodCategoryStack */ = {
@@ -415,6 +426,7 @@
 				6B0F45922A014A87009E026A /* ForkApp.swift in Sources */,
 				6B0F45D82A027E91009E026A /* MarkerView.swift in Sources */,
 				6BF0BA142A057F80003763A6 /* FoodCategoryStack.swift in Sources */,
+				6B4E95AC2A07A381002474E5 /* RestaurantModel.swift in Sources */,
 				6B0F45BE2A014FF9009E026A /* RestaurantsListView.swift in Sources */,
 				6B4E95A42A0681EF002474E5 /* FoodModel.swift in Sources */,
 				6B0F45C72A0161F1009E026A /* CategoryCellView.swift in Sources */,

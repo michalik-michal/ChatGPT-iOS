@@ -29,9 +29,9 @@ struct RestaurantsListView: View {
                     .padding(.horizontal, 5)
                 ScrollView {
                     VStack(spacing: 0) {
-                        RestaurantCellView()
-                        RestaurantCellView()
-                        RestaurantCellView()
+                        ForEach(Mock().mockRestaurantModels(), id: \.self) { restuaruant in
+                            RestaurantCellView(model: restuaruant)
+                        }
                     }
                 }
             }

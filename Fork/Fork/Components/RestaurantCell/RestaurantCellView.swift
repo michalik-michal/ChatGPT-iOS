@@ -1,16 +1,19 @@
 import SwiftUI
 
 struct RestaurantCellView: View {
+    
+    var model: RestaurantModel
+    
     var body: some View {
         NavigationStack {
             NavigationLink {
                 RestaurantView()
             } label: {
                 VStack(alignment: .leading) {
-                    ImageView(image: "restaurant", height: 180)
+                    ImageView(image: model.image, height: 180)
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Siwy Dym")
+                            Text(model.name)
                                 .font(.title.bold())
                                 .foregroundColor(.black)
                             Spacer()
@@ -37,10 +40,9 @@ struct RestaurantCellView: View {
                         }
                         ScrollView(.horizontal) {
                             HStack {
-                                CategoryCellView(category: .vegan)
-                                CategoryCellView(category: .cafe)
-                                CategoryCellView(category: .drinks)
-                                CategoryCellView(category: .lunch)
+                                ForEach(model.categories, id: \.self) { category in
+                                    CategoryCellView(category: category)
+                                }
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -50,11 +52,12 @@ struct RestaurantCellView: View {
                 }
             }
         }
+        .buttonStyle(.plain)
     }
 }
 
 struct RestaurantCellView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCellView()
+        RestaurantCellView(model: RestaurantModel(name: "SiwyDym", image: "restaurant", categories: [.vegan, .cafe, .drinks, .lunch]))
     }
 }

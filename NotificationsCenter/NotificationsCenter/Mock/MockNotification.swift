@@ -1,9 +1,10 @@
 //
 //  MockNotification.swift
-//  NotificationsCenter
+//  Amway
 //
-//  Created by Michal Michalik on 05/05/2023.
+//  Copyright © 2023 Amway. All rights reserved.
 //
+
 
 import Foundation
 
@@ -16,6 +17,6 @@ class MockNotification {
         NotificationModel(category: .business, date: "Yesterday", headline: "Sed ut perspicitatis unde omnis iste natus", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fughit", isRead: true),
         NotificationModel(category: .shopping, date: "Yesterday", headline: "Sed ut perspicitatis unde omnis iste natus", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fughit", isRead: false),
         NotificationModel(category: .business, date: "Thursday", headline: "Sed ut perspicitatis unde omnis iste natus", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fughit", isRead: true),
-        NotificationModel(category: .business, date: "Thursday", headline: "Sed ut perspicitatis unde omnis iste natus", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fughit", isRead: true)
+        NotificationModel(category: .business, date: "Thursday", headline: "Sed ut perspicitatis unde omnis iste natus", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fughit", isRead: false)
     ]
 }

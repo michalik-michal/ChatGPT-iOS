@@ -28,4 +28,12 @@ class Mock {
             FoodCell(food: FoodModel(price: 37, title: "House burger", ingredients: [], image: "burger")),]
     }
     
+    func mockRestaurantModels() -> [RestaurantModel] {
+        return [
+            RestaurantModel(name: "Siwy Dym", image: "restaurant", categories: [.lunch, .drinks, .cafe, .vegan]),
+            RestaurantModel(name: "Biała Mewa", image: "restaurant2", categories: [.cafe, .drinks]),
+            RestaurantModel(name: "Frytki Belgijskie", image: "restaurant3", categories: [.lunch])
+        ]
+    }
+    
 }

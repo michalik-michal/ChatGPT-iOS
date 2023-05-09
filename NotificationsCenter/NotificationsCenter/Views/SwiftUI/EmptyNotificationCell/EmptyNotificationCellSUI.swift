@@ -1,13 +1,13 @@
 //
-//  EmptyNotificationCell.swift
-//  NotificationsCenter
+//  EmptyNotificationCellSUI.swift
+//  Amway
 //
-//  Created by Michal Michalik on 05/05/2023.
+//  Copyright © 2023 Amway. All rights reserved.
 //
 
 import SwiftUI
 
-struct EmptyNotificationCell: View {
+struct EmptyNotificationCellSUI: View {
     var body: some View {
         VStack(spacing: 15) {
             Image("amwayCloud")
@@ -26,6 +26,6 @@ struct EmptyNotificationCell: View {
 
 struct EmptyNotificationCell_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyNotificationCell()
+        EmptyNotificationCellSUI()
     }
 }
