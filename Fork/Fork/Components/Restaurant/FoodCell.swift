@@ -31,6 +31,7 @@ struct FoodCell: View {
             }
             Spacer()
         }
+        .frame(height: 130)
         .overlay(alignment: .bottomTrailing) {
             Text("\(food.price) zł")
                 .font(.title2.bold())
