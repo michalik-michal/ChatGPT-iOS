@@ -1,10 +1,3 @@
-//
-//  Mock.swift
-//  Fork
-//
-//  Created by Michal Michalik on 07/05/2023.
-//
-
 import Foundation
 
 
@@ -53,5 +46,4 @@ class Mock {
             RestaurantModel(name: "Frytki Belgijskie", image: "restaurant3", categories: [.lunch])
         ]
     }
-    
 }

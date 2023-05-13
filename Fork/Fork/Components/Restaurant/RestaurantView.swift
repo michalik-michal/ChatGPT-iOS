@@ -15,8 +15,6 @@ struct RestaurantView: View {
                         adressStack
                         secondaryStack
                         buttonStack
-//                        FoodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast], mealCategory: $selectedCategory)
-//                            .padding(.top)
                         foodCategoryStack(categories: [.all, .main, .pizza, .pasta, .drinks, .breakfast])
                             .padding(.top)
                     }

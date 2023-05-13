@@ -1,10 +1,3 @@
-//
-//  FoodCell.swift
-//  Fork
-//
-//  Created by Michal Michalik on 06/05/2023.
-//
-
 import SwiftUI
 
 struct FoodCell: View {
